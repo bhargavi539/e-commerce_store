@@ -1,0 +1,30 @@
+
+Project Description -
+E-commerce website called Gift A Book which allows users to browse through the catalog of books available conveniently by searching for books by title or category, purchase the books in any quantity and receive the order summary.
+
+Technologies -
+* HTML
+* CSS
+* JavaScript
+* Bootstrap4
+
+Prerequisites -
+* Recent version of Google Chrome (Tested on Version 76.0.3809.132)
+
+Features -
+* Responsive layout
+* Cover page image for every book
+* Search books by category
+* Search books by title
+* Adding books to cart
+* Removing books from cart
+* Editing quantities of books in cart
+* Adding same book to cart multiple times
+* Counter for total items in cart
+* Viewing cart details and total price of books in cart
+* Marking books as wishlist items
+* Counter for total items in wishlist
+* Default image to replace broken images
+* Data persistance - confirmed orders are downloaded in JSON format
+
+Test cases included in the file TestCases.xlsx

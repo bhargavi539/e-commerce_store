@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gift A Book</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap" rel="stylesheet">
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <div class="container-fluid" id="header">
+        <div class="wrapper row">
+            <span id="logo" class="col-lg-4 col-md-5">
+              <i class="fas fa-book"></i>
+              <h3>Gift A Book</h3>
+          </span>
+          <span id="search-span" class="col-lg-4 col-md-4">
+              <input type="text" name="search-box" style="width: 200px" id="search-box" placeholder="search book.." onkeyup="searchBook();">
+          </span>
+                <span id="wish-cart" class="col-lg-4 col-md-3">
+                  <a href="#"><i class="far fa-heart wish-icon"><span id="wish-counter">0</span></i></a>
+                  <a href="#yourcart-title"><i class="fas fa-shopping-cart cart-icon"><span id="cart-counter">0</span></i></a>
+                </span>
+                
+                
+        </div>
+  </div><!--container fluid-->
+  
+  
+
+    <!--books-display-->
+    <div class="books-display mx-auto ">
+        <div class="wrapper category">
+            <button type="button" class="btn button active col-sm-3" onclick="filterSelection('all');">All</button>
+            <button type="button" class="btn button col-sm-3" onclick="filterSelection('literature');">Literature</button>
+            <button type="button" class="btn button col-sm-3" onclick="filterSelection('romance');">Romance</button>
+        </div>
+    <div class="wrapper">
+              
+        <div class="row">
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/literature-1.jpg" alt="literature1" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            <a href="#" title="add to wishlist" class="wish-bg"><i class="far fa-heart wish-item" onclick="addToWish(event);" ></i></a>
+                            <a href="#" title="add to cart" ><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">The Prophet</h4>
+                        <p class="card-text book-price">$22.44</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/literature-2.jpg" alt="The Alchemist" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">The Alchemist</h4>
+                        <p class="card-text book-price">$38.99</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9733; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100">
+                    <img class="card-img-top book-image" src="img/literature-3.jpg" alt="The Monk who sold his ferrari" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">The Monk Who Sold His Ferrari</h4>
+                        <p class="card-text book-price">$25.50</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/literature-4.jpg" alt="the Great Gatsby" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist" ><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">The Great Gatsby</h4>
+                        <p class="card-text book-price">$18.09</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+        
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/romance-1.jpg" alt="Until love sets us apart" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">Until Love Sets Us Apart</h4>
+                        <p class="card-text book-price">$15.44</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100">
+                    <img class="card-img-top book-image" src="img/romance-2.jpg" alt="A Girl to remember" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">A Girl To Remember</h4>
+                        <p class="card-text book-price">$14.03</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply  romance all">
+                <div class="card w-100 h-100">
+                    <img class="card-img-top book-image" src="img/romance-3.jpg" alt="Love a little stronger" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">Love A Little Stronger</h4>
+                        <p class="card-text book-price">$10.09</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/romance-4.jpg" alt="I still think about you" width="200" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">I Still Think About You</h4>
+                        <p class="card-text book-price">$22.09</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/literature-6.jpg" alt="13 steps to bloody good wealth" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">3 Steps To Bloody Good Wealth</h4>
+                        <p class="card-text book-price">$40.99</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+        
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/romance-8.jpg" alt="bound by revenge" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">Bound By Revenge</h4>
+                        <p class="card-text book-price">$25.44</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/romance-6.jpg" alt="Love story of a Commando" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">Love Story Of A Commando</h4>
+                        <p class="card-text book-price">$29.58</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply romance all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/romance-5.jpg" alt="The NoteBook" onerror="this.src='img/imagenotfound.png';" >
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">The Notebook</h4>
+                        <p class="card-text book-price">$30.09</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9734; &#9734; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+            <div class="col-lg-3 col-md-4 col-sm-6 margin-apply literature all">
+                <div class="card w-100 h-100 ">
+                    <img class="card-img-top book-image" src="img/literature-5.jpg" alt="Sherlock Holmes" onerror="this.src='img/imagenotfound.png';">
+                    <div class="card-img-overlay">
+                        <p class="card-text">
+                            
+                            <a href="#" title="add to wishlist"><i class="far fa-heart wish-item" onclick="addToWish(event);"></i></a>
+                            <a href="#" title="add to cart" class="cart-click"><i class="fas fa-shopping-basket" onclick="addToCart();"></i></a>
+                        </p>
+                    </div><!--card-img-overlay-->
+                    <div class="card-body">
+                        <h4 class="card-title book-title">Sherlock Holmes</h4>
+                        <p class="card-text book-price">$25.99</p>
+                        <p class="card-text text-warning star-style">&#9733; &#9733; &#9733; &#9733; &#9733; </p>
+                    </div><!--card-body-->
+                </div><!--card-->
+            </div><!--col-lg-3-->
+
+        </div><!--row-->
+    </div> <!--wrapper--> 
+  </div><!--books-display-->
+  <div class="wrapper">
+    <h2 class="text-center" id="yourcart-title">Your Cart</h2>
+  </div>
+  <section id="showcart" class="wrapper">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Cover</th>
+          <th>Title</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody id="item-row">
+
+        </tbody>
+      
+    </table>
+
+    <h4 class="d-block text-right">Total: <span id="cart-total">$0.00</span></h4>
+    <button class="btn-success float-right" id="purchase" onclick="purchaseClicked();">Purchase</button>
+  </section>
+    
+  
+  <script type="text/javascript" src="js/script.js"></script>
+    
+</body>
+</html>

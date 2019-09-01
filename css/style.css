@@ -1,0 +1,160 @@
+body{
+	font-family: 'Roboto Slab', serif;
+	}
+#search-box{
+    font-size: 25px;
+    border-radius: 5px;
+  }
+.category{
+  padding: 50px;
+  text-align: center;
+}
+.category .button{
+  padding: 5px;
+  border-radius: 5px;
+  color: pink;}
+  .button{
+    background-color: cadetblue;
+  }
+.button.active {
+  background-color: blue!important;
+  color: white;
+}
+.all{
+  display: none;
+}
+.show{
+  display: block;
+}
+#header{
+	min-height: 100px; 
+	font-size: 50px;
+	background-color: cadetblue;
+  color: pink;
+  padding: 20px 0;
+  overflow: auto;
+}
+#header h3{
+	display: inline-block;
+}
+#header .cart-icon, #header .wish-icon{
+	position: relative;
+	
+}
+#header #wish-cart{
+	float: right;
+}
+#wish-cart a{
+	color: pink;
+}
+#wish-counter{
+  position: absolute;
+  font-size: 15px;
+    color: white;
+    top: 45%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+#cart-counter{
+	position: absolute;
+	font-size: 15px;
+    color: white;
+    top: 40%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+}
+.wrapper{
+	width: 80%;
+	margin: 0 auto;
+	}
+.star-style{
+	font-size: 20px;
+}
+.card img{
+	margin: auto;
+
+}
+.card-img-top{
+  		position: relative;
+  	}
+.card-img-overlay{
+  		position: absolute;
+  		top: 50%;
+  		left: 50%;
+  		transform: translate(-50%, -50%);
+    
+  	}
+.card-text a{
+  		display: none;
+  		margin-bottom: 10px;
+  		text-align: center;
+  	}
+ .card-text .fa-shopping-basket{
+  		color: white;
+    	background-color:darkgrey;
+    	border-radius: 50%;
+    	padding: 5px;
+      font-size: 25px;
+
+    }
+.wish-item{
+      background-color: darkgrey;
+      color: white;
+      border-radius: 50%;
+      padding: 5px;
+      font-size: 25px;
+    }
+.card-img-overlay:hover .card-text a{
+    	display: block;
+    }
+.margin-apply{
+	margin-bottom: 1rem;
+}
+#purchase{
+	border-radius: 5px;
+}
+.delete{
+	border-radius :5px;
+}
+.change-color{
+  background-color: red;
+}
+
+@media only screen and (max-width: 575px) {
+	#header{
+		font-size: 35px;
+    display: flex-column;
+	}
+	.books-display{
+		width: 60%;
+	}
+  .button{
+    margin: 5px;
+  }
+
+}
+@media only screen and (max-width: 768px) {
+  #header{
+    font-size: 25px;
+    
+    padding: 10px;
+    text-align: center;
+  }
+  #header #search-span{
+    display: block;
+    text-align: center;
+  }
+  #header #wish-cart{
+    float: none;
+    display: block;
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  #header #wish-cart{
+    display: block;
+    text-align: center;
+    float: none;
+  }
+  
+}
