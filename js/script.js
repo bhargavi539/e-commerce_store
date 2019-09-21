@@ -79,20 +79,16 @@ function addItemToCart(event){
 		if(itemNamesInCart.includes(bookTitle)){
 			var i = itemNamesInCart.indexOf(bookTitle);
 			var prevQty = itemQtyInCart[i];
-			console.log(i);
-			console.log(prevQty);
-
 			inputChangedDuplicateAddition(prevQty,bookTitle);
-			//console.log('1');
+			
 		}
 		else{
 			addItemToCartRow(bookImage,bookTitle,bookPrice);
-			//console.log('2');
+			
 		}
 	}
 	else{
 		addItemToCartRow(bookImage,bookTitle,bookPrice);
-		//console.log('3');
 	}
 }
 function addItemToCartRow(bookImage,bookTitle,bookPrice){
@@ -104,7 +100,6 @@ function addItemToCartRow(bookImage,bookTitle,bookPrice){
 		var itemImg =row.insertCell(0);
 
 		var itemName=row.insertCell(1);
-		console.log(itemName+"Item Name");
 		var itemQty = row.insertCell(2);
 		var itemPrice = row.insertCell(3);
 		var removeButton = row.insertCell(4);
@@ -125,11 +120,10 @@ function addItemToCartRow(bookImage,bookTitle,bookPrice){
 		var cartTotal=0;
 		for(j=0;j<cartItemPrice.length;j++){
 			var ItemPrice = cartItemPrice[j].innerText.replace('$','');
-			//console.log(cartTotal);
 			cartTotal =parseFloat(cartTotal) + parseFloat(ItemPrice);
 			}
 			cartTotal = cartTotal.toFixed(1);
-			//console.log(cartTotal);
+			
 		document.getElementById('cart-total').innerText = "$"+cartTotal;
 
 		var allqty = document.getElementsByClassName('qtyclass');
@@ -144,7 +138,6 @@ function inputChanged(event){
 	if(isNaN(qtyChanged.value) || qtyChanged.value <= 0 || qtyChanged.value % 1 != 0){
 		alert("Invalid entry. Please enter positive integers. Quantity reset to 1.")
 		qtyChanged.value = 1;
-		console.log(qtyChanged.value);
 	}
 	
 	updateCartValue(); 
@@ -153,7 +146,6 @@ function inputChanged(event){
 function deleteClicked(event){
 	var deleteButton = event.target;
 	var test = deleteButton.parentElement.parentElement;
-	// console.log(test);
 	test.remove();
 	var cartCount = document.getElementById('cart-counter').innerHTML;
 	cartCount--;
@@ -173,27 +165,21 @@ function inputChangedDuplicateAddition(prevQty,bookTitle){
 	updateCartValue();
 }
 function updateCartValue(){
-	// var changedQty =  document.getElementById('qty')[0].value;
-	// console.log("quantity changed" + changedQty);
+	
 
 	var table = document.getElementById('item-row');
 	var rows = table.getElementsByTagName('tr').length;
-	//console.log('no .of rows'+ rows);
-
+	
 	var total = 0;
 	var cartUpdatedTotal =0;
 
 	for(var i=0; i < rows; i++){
 		var updatedInput = table.getElementsByClassName('qtyclass')[i].value;
 		var cartItemPrice = table.getElementsByClassName('cart-item-price')[i].innerText.replace('$','');
-		//console.log("updated Input"+ updatedInput);
 		total = parseInt(total)+ parseInt(updatedInput);
-		//console.log("total"+total);
-
-
 		//Multiplying item qty with the price and displaying as cart total value
 		cartUpdatedTotal = cartUpdatedTotal + (updatedInput * parseFloat(cartItemPrice));
-		//console.log('cart final updated value'+cartUpdatedTotal);
+		
 	}
 
 	cartUpdatedTotal = cartUpdatedTotal.toFixed(1);
@@ -207,31 +193,29 @@ function purchaseClicked(){
 	}
 	else{
 			var condition =confirm("Please click OK to confirm the purchase or Cancel to continue shopping");
-	if(condition == true){
-		alert("Thank you for shopping with Gift A Book. Your purchase is now complete. We will process the order as soon as possible.");
+		if(condition == true){
+			alert("Thank you for shopping with Gift A Book. Your purchase is now complete. We will process the order as soon as possible.");
 
-		var cartTable = document.getElementById('item-row');
-		var tableRows = cartTable.getElementsByTagName('tr');
-		var cartRowCount = tableRows.length;
-		//console.log('condition true')
+			var cartTable = document.getElementById('item-row');
+			var tableRows = cartTable.getElementsByTagName('tr');
+			var cartRowCount = tableRows.length;
+		
+			saveOrderToFile();
 
-		saveOrderToFile();
+			for (var x=cartRowCount-1; x>=0; x--) {
+   				cartTable.removeChild(tableRows[x]);
+   			
+			}
 
-		for (var x=cartRowCount-1; x>=0; x--) {
-   			cartTable.removeChild(tableRows[x]);
-   			//console.log('cart table deleted');
-		}
+			//clearing the cart count after purchasing
+			var cartCount = document.getElementById('cart-counter').innerText;
+			cartCount = 0;
+			document.getElementById('cart-counter').innerText = cartCount;
 
-		//clearing the cart count after purchasing
-		var cartCount = document.getElementById('cart-counter').innerText;
-		cartCount = 0;
-		document.getElementById('cart-counter').innerText = cartCount;
-
-		//clearing cart total after purchasing
-		var cartTotal = document.getElementById('cart-total').innerText;
-		//console.log(cartTotal);
-		cartTotal = parseFloat(0);
-		document.getElementById('cart-total').innerText = "$" + cartTotal.toFixed(2);
+			//clearing cart total after purchasing
+			var cartTotal = document.getElementById('cart-total').innerText;
+			cartTotal = parseFloat(0);
+			document.getElementById('cart-total').innerText = "$" + cartTotal.toFixed(2);
 
 	}
 
@@ -283,7 +267,6 @@ function download(content, fileName, contentType) {
 function addToWish(event){
 	var wishItem = event.target;
 	var condition = wishItem.classList.contains('change-color');
-	console.log(condition);
 	if(condition){
 		var wishCounter = document.getElementById('wish-counter').innerText;
 		
